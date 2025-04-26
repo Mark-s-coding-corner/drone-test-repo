@@ -3,8 +3,9 @@ name: default
 type: docker
 
 steps:
-  - name: build
+  - name: test-build
     image: alpine
     commands:
+      - echo "Hello, Woodpecker!"
       - chmod +x build.sh || true
-      - ./build.sh || echo "Build script failed (probably expected in testing)"
+      - ./build.sh || echo "build.sh failed (ignore if testing)"
